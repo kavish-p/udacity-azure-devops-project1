@@ -58,7 +58,27 @@ packer build server.json
 terraform init
 ```
 
-2. Create Terraform Plan
+2. Make changes to _vars.tf_ if required
+
+The variable _vm_count_ can be customized to increase or decrease the number of deployed VMs in this setup.
+
+3. Create Terraform Plan
 ```
 terraform plan -out solution.plan
+```
+
+4. Apply Terraform Plan
+```
+terraform apply solution.plan
+```
+
+5. Check Azure Resources
+![server](screenshots/06-azure-resources.png "server")
+
+6. Check Deployed Web Server
+![server](screenshots/05-curl.png "server")
+
+7. Destroy Azure Resources
+```
+terraform destroy
 ```
